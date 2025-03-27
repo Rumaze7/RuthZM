@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scientific Number Checker</title>
+<style>
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        background: linear-gradient(to bottom right, #ff9999, #66ccff);
+        text-align: center;
+        padding: 20px;
+    }
+    .container {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        display: inline-block;
+        margin-top: 50px;
+        font-size: 20px;
+    }
+    .title {
+        color: #FF6347;
+        margin: 10px 0;
+    }
+    .input-field {
+        margin: 20px 0;
+        padding: 10px;
+        width: 80%;
+    }
+    .button {
+        background-color: #FF6347;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .button:hover {
+        background-color: #FF4500;
+    }
+    .footer {
+        margin-top: 50px;
+        font-size: 0.8em;
+    }
+    .result {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="title">Scientific Number Checker</div>
+    <p>Please Enter a Scientific Number</p>
+    <input type="text" class="input-field" id="numberInput" placeholder="Type your number here...">
+    <button class="button" onclick="checkNumber()">Check</button>
+    <div class="result" id="result"></div>
+</div>
+<div class="footer">
+    <p>RUTH ZEFANYA MALINGKAS</p>
+    <p>221011030010</p>
+</div>
+
+<script>
+    function checkNumber() {
+        var input = document.getElementById('numberInput').value;
+        var isNumber = !isNaN(parseFloat(input)) && isFinite(input);
+        var message = isNumber ? "Yes, it is a number" : "No, it is not a number";
+        document.getElementById('result').innerText = message;
+    }
+</script>
+</body>
+</html>
